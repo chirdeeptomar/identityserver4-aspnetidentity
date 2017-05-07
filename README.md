@@ -13,9 +13,12 @@ POST  http://localhost:5000/api/accounts/
 
 Login User:
 
-username:hello@test.com
-password:Sample123!!
-scope:api.location
-grant_type:password
-client_id:client
-client_secret:secret
+POST http://localhost:5000/connect/token/
+{  
+   "username":"hello@test.com",
+   "password":"Sample123!!",
+   "scope":"api.location",
+   "grant_type":"password",
+   "client_id":"client",
+   "client_secret":"secret"
+}
