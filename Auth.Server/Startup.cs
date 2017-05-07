@@ -103,15 +103,9 @@ namespace Auth.Server
 
                 if (!context.IdentityResources.Any())
                 {
-                    foreach (var resource in Config.GetUsers())
+                    foreach (var resource in Config.GetIdentityResources())
                     {
-                        var user = new IdentityResource
-                        {
-                            Id = int.Parse(resource.SubjectId),
-                            Name = resource.Username
-                        };
-
-                        context.IdentityResources.Add(user);
+                        context.IdentityResources.Add(resource.ToEntity());
                     }
                     context.SaveChanges();
                 }

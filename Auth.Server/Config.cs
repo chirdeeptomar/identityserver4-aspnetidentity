@@ -44,23 +44,14 @@ namespace Auth.Server
                 }
             };
         }
-
-        public static List<TestUser> GetUsers()
+        public static List<IdentityResource> GetIdentityResources()
         {
-            return new List<TestUser>
+            return new List<IdentityResource>
             {
-                new TestUser
-                {
-                    SubjectId = "1",
-                    Username = "alice",
-                    Password = "password"
-                },
-                new TestUser
-                {
-                    SubjectId = "2",
-                    Username = "bob",
-                    Password = "password"
-                }
+                new IdentityResources.OpenId(),
+                new IdentityResources.Email(),
+                new IdentityResources.Profile(),
+                new IdentityResources.Address()
             };
         }
 
